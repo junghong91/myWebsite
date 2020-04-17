@@ -13,7 +13,7 @@ import {
   Divider,
   List,
   Typography,
-  Box
+  Box,
 } from "@material-ui/core";
 import Footer from "./Footer";
 
@@ -22,49 +22,55 @@ import {
   AssignmentInd,
   Home,
   Apps,
-  ContactMail
+  ContactMail,
+  Comment,
 } from "@material-ui/icons";
 import avatar from "../avatar.png";
 
 // CSS STYLES
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   menuSliderContainer: {
     width: 250,
     background: "#511",
-    height: "100%"
+    height: "100%",
   },
   avatar: {
     display: "block",
     margin: "0.5rem auto",
     width: theme.spacing(5),
-    heigth: theme.spacing(6)
+    heigth: theme.spacing(6),
   },
   listItem: {
-    color: "tan"
-  }
+    color: "tan",
+  },
 }));
 
 const menuItems = [
   {
     listIcon: <Home />,
     listText: "Home",
-    listPath: "/"
+    listPath: "/",
   },
   {
     listIcon: <AssignmentInd />,
     listText: "Resume",
-    listPath: "/resume"
+    listPath: "/resume",
   },
   {
     listIcon: <Apps />,
     listText: "Portfolio",
-    listPath: "/portfolio"
+    listPath: "/portfolio",
   },
   {
     listIcon: <ContactMail />,
     listText: "Contacts",
-    listPath: "/contacts"
-  }
+    listPath: "/contacts",
+  },
+  {
+    listIcon: <Comment />,
+    listText: "Comments",
+    listPath: "/comments",
+  },
 ];
 
 const Navbar = () => {
@@ -76,7 +82,7 @@ const Navbar = () => {
 
   const classes = useStyles();
 
-  const sideList = slider => (
+  const sideList = (slider) => (
     <Box
       className={classes.menuSliderContainer}
       component="div"
