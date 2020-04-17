@@ -3,14 +3,16 @@ import { makeStyles, withStyles } from "@material-ui/core/styles";
 import { TextField, Typography, Button, Grid, Box } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
 import Navbar from "../Navbar";
+import DisplayComments from "./DisplayComments";
 import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   form: {
     top: "50%",
     left: "50%",
-    transform: "translate(-50%, -50%)",
-    position: "absolute",
+    margin: "4rem",
+    // transform: "translate(-50%, -50%)",
+    // position: "absol ute",
   },
   button: {
     marginTop: "1rem",
@@ -41,7 +43,7 @@ const InputField = withStyles({
   },
 })(TextField);
 
-const Comments = () => {
+const Comments = ({ comments }) => {
   const classes = useStyles();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -63,11 +65,11 @@ const Comments = () => {
     axios
       .post("/comments/add", comment)
       .then((res) => setMessage(res.data))
-      .catch((err) => console.log(`Error:::::: ${err}`));
+      .catch((err) => console.log(`Error: ${err}`));
   };
 
   return (
-    <Box component="div" style={{ background: "#233", height: "100vh" }}>
+    <Box component="div" style={{ background: "#233", height: "100%" }}>
       <Navbar />
       <Grid container justify="center">
         <form className={classes.form} onSubmit={onSubmit}>
@@ -127,6 +129,7 @@ const Comments = () => {
             Add Comment
           </Button>
         </form>
+        <DisplayComments comments={comments} />
       </Grid>
     </Box>
   );
