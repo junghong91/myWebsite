@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
-import { TextField, Typography, Button, Grid, Box } from "@material-ui/core";
+import {
+  TextField,
+  Typography,
+  Button,
+  Grid,
+  Box,
+  Link,
+} from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
 import Navbar from "../Navbar";
-import DisplayComments from "./DisplayComments";
 import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
@@ -48,7 +54,7 @@ const InputField = withStyles({
   },
 })(TextField);
 
-const Comments = ({ comments }) => {
+const EditArticle = (props) => {
   const classes = useStyles();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -61,17 +67,25 @@ const Comments = ({ comments }) => {
       title,
       description,
       authorname,
+      createdAt: Date.now(),
     };
 
-    setTitle("");
-    setDescription("");
-    setAuthorname("");
-
     axios
-      .post("/comments/add", comment)
+      .put(`/comments/update/${props.match.params.id}`, comment)
       .then((res) => setMessage(res.data))
       .catch((err) => console.log(`Error: ${err}`));
   };
+
+  useEffect(() => {
+    axios
+      .get(`/comments/${props.match.params.id}`)
+      .then((res) => {
+        setTitle(res.data.title);
+        setDescription(res.data.description);
+        setAuthorname(res.data.authorname);
+      })
+      .catch((err) => console.log(`Error: ${err}`));
+  }, []);
 
   return (
     <Box component="div" style={{ background: "#233", height: "100%" }}>
@@ -131,15 +145,12 @@ const Comments = ({ comments }) => {
             fullWidth={true}
             endIcon={<SendIcon />}
           >
-            Add Comment
+            Edit Comment
           </Button>
         </form>
       </Grid>
-      <Box className={classes.comments}>
-        <DisplayComments comments={comments} />
-      </Box>
     </Box>
   );
 };
 
-export default Comments;
+export default EditArticle;
