@@ -9,6 +9,7 @@ import {
   Link,
 } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
+import KeyboardReturn from "@material-ui/icons/KeyboardReturn";
 import Navbar from "../Navbar";
 import axios from "axios";
 
@@ -72,7 +73,10 @@ const EditArticle = (props) => {
 
     axios
       .put(`/comments/update/${props.match.params.id}`, comment)
-      .then((res) => setMessage(res.data))
+      .then((res) => {
+        setMessage("Comment is Updated");
+        alert(message);
+      })
       .catch((err) => console.log(`Error: ${err}`));
   };
 
@@ -146,6 +150,16 @@ const EditArticle = (props) => {
             endIcon={<SendIcon />}
           >
             Edit Comment
+          </Button>
+          <br />
+          <Button
+            href="/comments"
+            className={classes.button}
+            variant="outlined"
+            fullWidth={true}
+            endIcon={<KeyboardReturn />}
+          >
+            Go Back
           </Button>
         </form>
       </Grid>

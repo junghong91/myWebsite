@@ -78,7 +78,7 @@ const DisplayComments = ({ comments }) => {
                 >
                   Delete
                 </Button>
-                <Box>{comment.createdAt}</Box>
+                <Box style={{ textAlign: "right" }}>{comment.createdAt}</Box>
               </Box>
             </Grid>
           </Grid>
