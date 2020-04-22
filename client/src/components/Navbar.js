@@ -43,6 +43,11 @@ const useStyles = makeStyles((theme) => ({
   listItem: {
     color: "tan",
   },
+
+  logIn: {
+    color: "tan",
+    textDecoration: "none",
+  },
 }));
 
 const menuItems = [
@@ -116,6 +121,14 @@ const Navbar = () => {
             </IconButton>
             <Typography varient="h5" style={{ color: "tan" }}>
               Portfolio
+            </Typography>
+            <Typography
+              varient="h5"
+              style={{ color: "tan", margin: "auto 1rem auto auto" }}
+            >
+              <Link varient="h5" className={classes.logIn} to="/user/login">
+                Log in
+              </Link>
             </Typography>
             <MobilRightMenuSlider
               anchor="right"

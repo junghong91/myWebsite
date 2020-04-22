@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import { TextField, Typography, Button, Grid, Box } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
@@ -48,12 +48,20 @@ const InputField = withStyles({
   },
 })(TextField);
 
-const Comments = ({ comments }) => {
+const Comments = () => {
   const classes = useStyles();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [authorname, setAuthorname] = useState("");
   const [message, setMessage] = useState("");
+
+  const [comments, setComments] = useState([]);
+  useEffect(() => {
+    axios
+      .get("/comments")
+      .then((res) => setComments(res.data))
+      .catch((error) => console.log(error));
+  }, [comments]);
 
   const onSubmit = (event) => {
     event.preventDefault();

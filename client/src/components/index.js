@@ -7,8 +7,8 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles({
   particlesCanvas: {
     position: "absolute",
-    opacity: 0.15
-  }
+    opacity: 0.15,
+  },
 });
 
 const Home = () => {
@@ -26,15 +26,15 @@ const Home = () => {
               value: 120,
               density: {
                 enable: true,
-                value_area: 900
-              }
+                value_area: 900,
+              },
             },
             shape: {
               type: "circle",
               stroke: {
                 width: 1,
-                color: "tomato"
-              }
+                color: "tomato",
+              },
             },
             size: {
               value: 8,
@@ -43,8 +43,8 @@ const Home = () => {
                 enable: true,
                 speed: 6,
                 size_min: 0.1,
-                sync: true
-              }
+                sync: true,
+              },
             },
             opacity: {
               value: 1,
@@ -53,10 +53,10 @@ const Home = () => {
                 enable: true,
                 speed: 1,
                 opacity_min: 0.1,
-                sync: true
-              }
-            }
-          }
+                sync: true,
+              },
+            },
+          },
         }}
       />
     </>
