@@ -9,10 +9,12 @@ import Checkbox from "@material-ui/core/Checkbox";
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import GitHubIcon from "@material-ui/icons/GitHub";
 
 const Copyright = () => {
   return (
@@ -52,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(1),
   },
   submit: {
-    margin: theme.spacing(3, 0, 2),
+    margin: theme.spacing(1, 0, 2),
   },
 }));
 
@@ -131,10 +133,30 @@ const Login = () => {
               type="submit"
               fullWidth
               variant="contained"
-              color="primary"
+              style={{ backgroundColor: "#344", color: "white" }}
               className={classes.submit}
             >
               Sign In
+            </Button>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              style={{ backgroundColor: "#24292e", color: "white" }}
+              className={classes.submit}
+              startIcon={<GitHubIcon />}
+            >
+              Continue with Github
+            </Button>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              style={{ backgroundColor: "#4267B2", color: "white" }}
+              className={classes.submit}
+              startIcon={<FacebookIcon />}
+            >
+              Continue with Facebook
             </Button>
             <Grid container>
               <Grid item xs>
