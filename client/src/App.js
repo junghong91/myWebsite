@@ -8,6 +8,8 @@ import Portfolio from "./components/Portfolio";
 import Contacts from "./components/Contacts";
 import Comments from "./components/comments/Comments";
 import EditArticle from "./components/comments/EditArticle";
+import Login from "./components/user/Login";
+import Register from "./components/user/Register";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         path="/comments/edit/:id"
         render={(props) => <EditArticle {...props} />}
       />
+      <Route path="/user/login" component={Login} />
+      <Route path="/user/register" component={Register} />
     </>
   );
 }

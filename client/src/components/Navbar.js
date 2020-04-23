@@ -48,6 +48,11 @@ const useStyles = makeStyles((theme) => ({
     color: "tan",
     textDecoration: "none",
   },
+  register: {
+    color: "tan",
+    textDecoration: "none",
+    marginLeft: "1.5rem",
+  },
 }));
 
 const menuItems = [
@@ -128,6 +133,13 @@ const Navbar = () => {
             >
               <Link varient="h5" className={classes.logIn} to="/user/login">
                 Log in
+              </Link>
+              <Link
+                varient="h5"
+                className={classes.register}
+                to="/user/register"
+              >
+                Register
               </Link>
             </Typography>
             <MobilRightMenuSlider

@@ -3,9 +3,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Box } from "@material-ui/core";
 import Navbar from "./Navbar";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   mainContainer: {
-    background: "#233"
+    background: "#233",
   },
   timeLine: {
     position: "relative",
@@ -17,20 +17,20 @@ const useStyles = makeStyles(theme => ({
       height: "100%",
       border: "1px solid tan",
       right: "40px",
-      top: 0
+      top: 0,
     },
     "&:after": {
       content: "''",
       display: "table",
-      clear: "both"
+      clear: "both",
     },
     [theme.breakpoints.up("md")]: {
       padding: "2rem",
       "&:before": {
         left: "calc(50% - 1px)",
-        right: "auto"
-      }
-    }
+        right: "auto",
+      },
+    },
   },
   timeLineItem: {
     padding: "1rem",
@@ -40,7 +40,7 @@ const useStyles = makeStyles(theme => ({
     clear: "both",
     "&:after": {
       content: "''",
-      position: "absolute"
+      position: "absolute",
     },
     "&:before": {
       content: "''",
@@ -50,7 +50,7 @@ const useStyles = makeStyles(theme => ({
       borderStyle: "solid",
       borderColor: "tomato tomato transparent transparent",
       borderWidth: "0.625rem",
-      transform: "rotate(45deg)"
+      transform: "rotate(45deg)",
     },
     [theme.breakpoints.up("md")]: {
       width: "44%",
@@ -58,14 +58,14 @@ const useStyles = makeStyles(theme => ({
       "&:nth-of-type(2n)": {
         float: "right",
         margin: "1rem",
-        borderColor: "tan"
+        borderColor: "tan",
       },
       "&:nth-of-type(2n):before": {
         right: "auto",
         left: "-0.625rem",
-        borderColor: "transparent transparent tomato tomato"
-      }
-    }
+        borderColor: "transparent transparent tomato tomato",
+      },
+    },
   },
   timeLineYear: {
     textAlign: "center",
@@ -77,30 +77,30 @@ const useStyles = makeStyles(theme => ({
     lineHeight: 1,
     padding: "0.5rem 0 1rem",
     "&:before": {
-      display: "none"
+      display: "none",
     },
     [theme.breakpoints.up("md")]: {
       textAlign: "center",
       margin: "0 auto",
       "&:nth-of-type(2n)": {
         float: "none",
-        margin: "0 auto"
+        margin: "0 auto",
       },
       "&:nth-of-type(2n):before": {
-        display: "none"
-      }
-    }
+        display: "none",
+      },
+    },
   },
   heading: {
     color: "tomato",
     padding: "3rem 0",
-    textTransform: "uppercase"
+    textTransform: "uppercase",
   },
   subHeading: {
     color: "white",
     padding: "0",
-    textTransform: "uppercase"
-  }
+    textTransform: "uppercase",
+  },
 }));
 
 const Resume = () => {
