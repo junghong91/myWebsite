@@ -11,7 +11,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import HowToReg from "@material-ui/icons/HowToReg";
-import FacebookIcon from "@material-ui/icons/Facebook";
+import InstagramIcon from "@material-ui/icons/Instagram";
 import GitHubIcon from "@material-ui/icons/GitHub";
 
 const useStyles = makeStyles((theme) => ({
@@ -82,7 +82,7 @@ const Register = () => {
               required
               fullWidth
               id="name"
-              label="Your Name(ID)"
+              label="Your Name (ID)"
               name="name"
               inputProps={{ style: { color: "white" } }}
             />
@@ -92,7 +92,7 @@ const Register = () => {
               required
               fullWidth
               id="email"
-              label="Email Address"
+              label="Email"
               name="email"
               inputProps={{ style: { color: "white" } }}
             />
@@ -157,9 +157,9 @@ const Register = () => {
               variant="contained"
               style={{ backgroundColor: "#4267B2", color: "white" }}
               className={classes.submit}
-              startIcon={<FacebookIcon />}
+              startIcon={<InstagramIcon />}
             >
-              Continue with Facebook
+              Continue with Instagram
             </Button>
           </form>
         </div>

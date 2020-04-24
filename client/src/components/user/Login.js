@@ -13,7 +13,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-import FacebookIcon from "@material-ui/icons/Facebook";
+import InstagramIcon from "@material-ui/icons/Instagram";
 import GitHubIcon from "@material-ui/icons/GitHub";
 
 const Copyright = () => {
@@ -154,9 +154,9 @@ const Login = () => {
               variant="contained"
               style={{ backgroundColor: "#4267B2", color: "white" }}
               className={classes.submit}
-              startIcon={<FacebookIcon />}
+              startIcon={<InstagramIcon />}
             >
-              Continue with Facebook
+              Continue with Instagram
             </Button>
             <Grid container>
               <Grid item xs>
