@@ -1,13 +1,14 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
-const passport = require("passport");
+const passport = require("passport"); // 로그인 인증
 const helmet = require("helmet");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
 require("dotenv").config();
 
+// Initializing
 const app = express();
 const port = process.env.PORT || 8080;
 
@@ -23,6 +24,7 @@ app.use(passport.initialize());
 app.use(cors());
 app.use(express.json());
 
+// Mongo DB Settings
 const uri = process.env.ATLAS_URI;
 
 mongoose.connect(uri, {
@@ -35,7 +37,7 @@ connection.once("open", () =>
   console.log("MongoDB connection established successfully!")
 );
 
-// Passport module selected
+// Passport module setting
 require("./passport")(passport);
 
 app.use("/comments", commentsRouter);

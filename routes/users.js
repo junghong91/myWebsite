@@ -1,9 +1,11 @@
 const express = require("express");
 const router = express.Router();
-
+const passport = require("passport");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 const User = require("../models/user");
+const secretOrKey = process.env.secretOrKey;
 
 router.get("/", (req, res) => {
   res.send("passport module test");
@@ -18,22 +20,76 @@ router.post("/register", (req, res) => {
     } else {
       const newUser = new User({
         email: req.body.email,
-        name: req.body.name,
         password: req.body.password,
+        name: req.body.name,
       });
-
+      // hashcode incoding
       bcrypt.genSalt(10, (err, salt) => {
-        if (err) throw err;
+        bcrypt.hash(newUser.password, salt, (err, hash) => {
+          if (err) {
+            throw err;
+          }
 
-        newUser.password = hash;
+          newUser.password = hash; // 변형된 password를 저장
 
-        newUser
-          .save()
-          .then((user) => res.json(user))
-          .catch((err) => console.log(err));
+          newUser
+            .save()
+            .then((user) => res.json(user))
+            .catch((err) => console.log(err));
+        });
       });
     }
   });
 });
+
+// Login Router
+router.post("/login", (req, res) => {
+  const email = req.body.email;
+  const password = req.body.password;
+
+  // Find member by email
+  User.findOne({ email }).then((user) => {
+    if (!user) {
+      errors.email = "You are not the member of this website";
+      return res.status(400).json(errors);
+    }
+  });
+  // Check Password
+  bcrypt.compare(password, user.password).then((isMatch) => {
+    if (isMatch) {
+      // Correct Password
+      // JWT creates PAYLOAD
+      const payload = {
+        id: user.id,
+        name: user.name,
+      };
+
+      // Create JMT Token
+      // available for 1hour
+      jwt.sign(payload, secretOrKey, { expireIn: 3600 }, (req, res) => {
+        res.json({
+          success: true,
+          token: "Bearer " + token,
+        });
+      });
+    } else {
+      errors.password = "Wrong Password";
+      return res.status(400).json(errors);
+    }
+  });
+});
+
+// getting the login(current) user information
+router.get(
+  "/current",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    res.json({
+      id: req.user.id,
+      email: req.user.email,
+      name: req.user.name,
+    });
+  }
+);
 
 module.exports = router;
