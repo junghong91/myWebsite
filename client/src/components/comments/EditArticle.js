@@ -1,13 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
-import {
-  TextField,
-  Typography,
-  Button,
-  Grid,
-  Box,
-  Link,
-} from "@material-ui/core";
+import { TextField, Typography, Button, Grid, Box } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
 import KeyboardReturn from "@material-ui/icons/KeyboardReturn";
 import Navbar from "../Navbar";

@@ -5,6 +5,8 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const User = require("../models/user");
+
+require("dotenv").config();
 const secretOrKey = process.env.secretOrKey;
 
 router.get("/", (req, res) => {
@@ -53,29 +55,30 @@ router.post("/login", (req, res) => {
       errors.email = "You are not the member of this website";
       return res.status(400).json(errors);
     }
-  });
-  // Check Password
-  bcrypt.compare(password, user.password).then((isMatch) => {
-    if (isMatch) {
-      // Correct Password
-      // JWT creates PAYLOAD
-      const payload = {
-        id: user.id,
-        name: user.name,
-      };
+    // Check Password
+    bcrypt.compare(password, user.password).then((isMatch) => {
+      if (isMatch) {
+        // Correct Password
+        // JWT creates PAYLOAD
+        console.log(user._id);
+        const payload = {
+          id: user._id,
+          name: user.name,
+        };
 
-      // Create JMT Token
-      // available for 1hour
-      jwt.sign(payload, secretOrKey, { expireIn: 3600 }, (req, res) => {
-        res.json({
-          success: true,
-          token: "Bearer " + token,
+        // Create JMT Token
+        // available for 1hour
+        jwt.sign(payload, secretOrKey, { expiresIn: 3600 }, (err, token) => {
+          res.json({
+            success: true,
+            token: "Bearer " + token,
+          });
         });
-      });
-    } else {
-      errors.password = "Wrong Password";
-      return res.status(400).json(errors);
-    }
+      } else {
+        errors.password = "Wrong Password";
+        return res.status(400).json(errors);
+      }
+    });
   });
 });
 

@@ -13,7 +13,7 @@ opts.secretOrKey = keys; // fromAuthHeaderAsBearerToken():  header에 Authorizat
 module.exports = (passport) => {
   passport.use(
     new JwtStrategy(opts, (jwt_payload, done) => {
-      User.findById(jwt_payload.email)
+      User.findById(jwt_payload.id)
         .then((user) => {
           if (user) {
             return done(null, user);
