@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(helmet());
 app.use(morgan("tiny"));
-app.use(passport.initialize());
+app.use(passport.initialize()); // Passport middleware
 
 app.use(cors());
 app.use(express.json());
@@ -37,9 +37,10 @@ connection.once("open", () =>
   console.log("MongoDB connection established successfully!")
 );
 
-// Passport module setting
+// Passport module setting(Passport config)
 require("./passport")(passport);
 
+// Routes
 app.use("/comments", commentsRouter);
 app.use("/api/users", userRouter);
 

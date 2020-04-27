@@ -4,6 +4,10 @@ const passport = require("passport");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
+// Load input validation
+const validationRegisterInput = require("../validation/register");
+const validationLoginInput = require("../validation/login");
+
 const User = require("../models/user");
 
 require("dotenv").config();
@@ -14,6 +18,12 @@ router.get("/", (req, res) => {
 });
 
 router.post("/register", (req, res) => {
+  // From validation
+  const { errors, isValid } = validationRegisterInput(req.body);
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+
   User.findOne({ email: req.body.email }).then((user) => {
     if (user) {
       return res.status(400).json({
