@@ -56,6 +56,12 @@ router.post("/register", (req, res) => {
 
 // Login Router
 router.post("/login", (req, res) => {
+  // From validation
+  const { errors, isValid } = validationLoginInput(req.body);
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+
   const email = req.body.email;
   const password = req.body.password;
 

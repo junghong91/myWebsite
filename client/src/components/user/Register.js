@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Navbar from "../Navbar";
 
 import {
@@ -66,7 +66,22 @@ const InputField = withStyles({
 
 const Register = () => {
   const classes = useStyles();
-  const isLoggedIn = false;
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [password2, setPassword2] = useState("");
+  const [errors, setErrors] = useState({});
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const newUser = {
+      name,
+      email,
+      password,
+      password2,
+    };
+    console.log(newUser);
+  };
 
   return (
     <Box className={classes.mainContainer}>
@@ -80,8 +95,10 @@ const Register = () => {
           <Typography component="h1" variant="h5" style={{ color: "tomato" }}>
             Register
           </Typography>
-          <form className={classes.form} noValidate>
+          <form className={classes.form} noValidate onSubmit={onSubmit}>
             <InputField
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               variant="outlined"
               margin="normal"
               required
@@ -92,6 +109,8 @@ const Register = () => {
               inputProps={{ style: { color: "white" } }}
             />
             <InputField
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               variant="outlined"
               margin="normal"
               required
@@ -102,6 +121,8 @@ const Register = () => {
               inputProps={{ style: { color: "white" } }}
             />
             <InputField
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               variant="outlined"
               margin="normal"
               required
@@ -114,6 +135,8 @@ const Register = () => {
               inputProps={{ style: { color: "white" } }}
             />
             <InputField
+              value={password2}
+              onChange={(e) => setPassword2(e.target.value)}
               variant="outlined"
               margin="normal"
               required
@@ -127,11 +150,7 @@ const Register = () => {
             />
             <FormControlLabel
               control={
-                <Checkbox
-                  value="remember"
-                  color="tomato"
-                  style={{ color: "tomato" }}
-                />
+                <Checkbox value="remember" style={{ color: "tomato" }} />
               }
               label="Remember me"
               style={{ color: "tomato" }}

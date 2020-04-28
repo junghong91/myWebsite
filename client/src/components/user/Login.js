@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../Navbar";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
@@ -82,6 +82,18 @@ const InputField = withStyles({
 
 const Login = () => {
   const classes = useStyles();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState({});
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const userData = {
+      email,
+      password,
+    };
+    console.log(userData);
+  };
 
   return (
     <Box className={classes.mainContainer}>
@@ -95,8 +107,10 @@ const Login = () => {
           <Typography component="h1" variant="h5" style={{ color: "tomato" }}>
             Log in
           </Typography>
-          <form className={classes.form} noValidate>
+          <form className={classes.form} noValidate onSubmit={onSubmit}>
             <InputField
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               variant="outlined"
               margin="normal"
               required
@@ -107,6 +121,8 @@ const Login = () => {
               inputProps={{ style: { color: "white" } }}
             />
             <InputField
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               variant="outlined"
               margin="normal"
               required
@@ -120,11 +136,7 @@ const Login = () => {
             />
             <FormControlLabel
               control={
-                <Checkbox
-                  value="remember"
-                  color="tomato"
-                  style={{ color: "tomato" }}
-                />
+                <Checkbox value="remember" style={{ color: "tomato" }} />
               }
               label="Remember me"
               style={{ color: "tomato" }}
