@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../Navbar";
+import axios from "axios";
 
 import {
   Avatar,
@@ -70,7 +71,6 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
-  const [errors, setErrors] = useState({});
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -81,6 +81,10 @@ const Register = () => {
       password2,
     };
     console.log(newUser);
+    axios
+      .post("/api/users/register", newUser)
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(`Error: ${err}`));
   };
 
   return (
