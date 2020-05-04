@@ -1,20 +1,24 @@
 import React, { useState } from "react";
 import Navbar from "../Navbar";
-import Avatar from "@material-ui/core/Avatar";
-import Button from "@material-ui/core/Button";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import TextField from "@material-ui/core/TextField";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
-import Link from "@material-ui/core/Link";
-import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
-import Typography from "@material-ui/core/Typography";
+import {
+  Avatar,
+  Button,
+  CssBaseline,
+  TextField,
+  FormControlLabel,
+  Checkbox,
+  Link,
+  Grid,
+  Box,
+  Typography,
+  Container,
+} from "@material-ui/core";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import GitHubIcon from "@material-ui/icons/GitHub";
+import axios from "axios";
+import Cookies from "js-cookie";
 
 const Copyright = () => {
   return (
@@ -84,15 +88,29 @@ const Login = () => {
   const classes = useStyles();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState({});
+  const [token, setToken] = useState("");
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const userData = {
-      email,
-      password,
-    };
-    console.log(userData);
+    // const userData = {
+    //   email,
+    //   password,
+    // };
+    // console.log(userData);
+    axios
+      .post("/api/users/login", {
+        email,
+        password,
+      })
+      .then((res) => {
+        console.log("Logged in successfully");
+        // console.log(res.data); // {success: true, token: ajskdadsldjasdj}
+        setToken(res.data.token);
+        Cookies.set("token", token); // Cookie 에 token 저장
+      })
+      .catch((err) => {
+        console.log(`Error: ${err}`);
+      });
   };
 
   return (

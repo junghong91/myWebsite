@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
-import { withCookies, useCookies } from "react-cookie";
+import { Route } from "react-router-dom";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import "./App.css";
 import Home from "./components/index";
@@ -13,15 +12,6 @@ import Login from "./components/user/Login";
 import Register from "./components/user/Register";
 
 const App = () => {
-  const [cookies, removeCookie] = useCookies(["user"]);
-  const [hasCookie, setHasCookie] = useState(false);
-
-  useEffect(() => {
-    if (cookies.user && cookies.user !== "undefined") {
-      setHasCookie(true);
-    }
-  }, [cookies]);
-
   return (
     <>
       <CssBaseline />
