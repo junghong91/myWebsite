@@ -88,15 +88,10 @@ const Login = () => {
   const classes = useStyles();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [token, setToken] = useState("");
+  // const [token, setToken] = useState("");
 
   const onSubmit = (e) => {
     e.preventDefault();
-    // const userData = {
-    //   email,
-    //   password,
-    // };
-    // console.log(userData);
     axios
       .post("/api/users/login", {
         email,
@@ -105,8 +100,9 @@ const Login = () => {
       .then((res) => {
         console.log("Logged in successfully");
         // console.log(res.data); // {success: true, token: ajskdadsldjasdj}
-        setToken(res.data.token);
-        Cookies.set("token", token); // Cookie 에 token 저장
+        // setToken(res.data.token);
+        // console.log("token", token);
+        Cookies.set("token", res.data.token); // Cookie 에 token 저장
       })
       .catch((err) => {
         console.log(`Error: ${err}`);
