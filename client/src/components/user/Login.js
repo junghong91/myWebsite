@@ -103,6 +103,7 @@ const Login = () => {
         // setToken(res.data.token);
         // console.log("token", token);
         Cookies.set("token", res.data.token); // Cookie 에 token 저장
+        window.location = "/";
       })
       .catch((err) => {
         console.log(`Error: ${err}`);

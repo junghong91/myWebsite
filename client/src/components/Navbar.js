@@ -122,6 +122,11 @@ const Navbar = () => {
     </Box>
   );
 
+  const handleLogout = () => {
+    Cookies.remove("token");
+    window.location = "/"; // redirect to Home when logged out
+  };
+
   return (
     <>
       <Box component="nav">
@@ -142,7 +147,7 @@ const Navbar = () => {
                   varient="h5"
                   className={classes.logIn}
                   to="/"
-                  onClick={() => Cookies.remove("token")}
+                  onClick={handleLogout}
                 >
                   Log out
                 </Link>
