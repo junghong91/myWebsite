@@ -120,7 +120,39 @@ const Contacts = () => {
         </Box>
       ) : (
         <Box>
-          <Grid>Please Login First</Grid>
+          <Box component="div" style={{ background: "#233", height: "100vh" }}>
+            <Navbar />
+            <Grid container justify="center">
+              <Box component="form" className={classes.form}>
+                <Typography
+                  variant="h5"
+                  style={{
+                    color: "tomato",
+                    textAlign: "center",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  Register and Sign in First
+                </Typography>
+                <Button
+                  className={classes.button}
+                  variant="outlined"
+                  fullWidth={true}
+                  onClick={() => (window.location = "/user/register")}
+                >
+                  Register
+                </Button>
+                <Button
+                  className={classes.button}
+                  variant="outlined"
+                  fullWidth={true}
+                  onClick={() => (window.location = "/user/login")}
+                >
+                  Already Have Email(ID)
+                </Button>
+              </Box>
+            </Grid>
+          </Box>
         </Box>
       )}
     </>
