@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Cookies from "js-cookie";
 import { makeStyles } from "@material-ui/core/styles";
 import MobilRightMenuSlider from "@material-ui/core/Drawer";
 import {
@@ -85,6 +86,11 @@ const menuItems = [
 
 const Navbar = () => {
   const [state, setState] = useState({ right: false });
+  const [token, setToken] = useState("");
+
+  useEffect(() => {
+    setToken(Cookies.get("token"));
+  });
 
   const toggleSlider = (slider, open) => () => {
     setState({ ...state, [slider]: open });
@@ -131,15 +137,26 @@ const Navbar = () => {
               varient="h5"
               style={{ color: "tan", margin: "auto 1rem auto auto" }}
             >
-              <Link varient="h5" className={classes.logIn} to="/user/login">
-                Log in
-              </Link>
+              {token ? (
+                <Link
+                  varient="h5"
+                  className={classes.logIn}
+                  to="/"
+                  onClick={() => Cookies.remove("token")}
+                >
+                  Log out
+                </Link>
+              ) : (
+                <Link varient="h5" className={classes.logIn} to="/user/login">
+                  Log in
+                </Link>
+              )}
               <Link
                 varient="h5"
                 className={classes.register}
                 to="/user/register"
               >
-                Register
+                {token ? "" : "Register"}
               </Link>
             </Typography>
             <MobilRightMenuSlider
