@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Box } from "@material-ui/core";
 import Navbar from "./Navbar";
+import resumeData from "./Data/resumeData";
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
@@ -113,99 +114,39 @@ const Resume = () => {
           Working Experience
         </Typography>
         <Box component="div" className={classes.timeLine}>
-          {/* Year 2010*/}
-          <Typography
-            variant="h2"
-            className={`${classes.timeLineYear} ${classes.timeLineItem}`}
-          >
-            2010
-          </Typography>
-          <Box component="div" className={classes.timeLineItem}>
-            <Typography
-              variant="h5"
-              align="center"
-              className={classes.subHeading}
-            >
-              Soongsil University
-            </Typography>
-            <Typography
-              variant="body1"
-              align="center"
-              style={{ color: "tomato" }}
-            >
-              Electronic Engineering
-            </Typography>
-            <Typography
-              variant="subtitle1"
-              align="center"
-              style={{ color: "tan" }}
-            >
-              I graduate from Hyundai highschool. And I enter into the Soongsil
-              Univ. I major in School of Electronic Engineering.
-            </Typography>
-          </Box>
-          {/* Year 2019*/}
-          <Typography
-            variant="h2"
-            className={`${classes.timeLineYear} ${classes.timeLineItem}`}
-          >
-            2019
-          </Typography>
-          <Box component="div" className={classes.timeLineItem}>
-            <Typography
-              variant="h5"
-              align="center"
-              className={classes.subHeading}
-            >
-              Web Development
-            </Typography>
-            <Typography
-              variant="body1"
-              align="center"
-              style={{ color: "tomato" }}
-            >
-              HTML, CSS, JavaScript
-            </Typography>
-            <Typography
-              variant="subtitle1"
-              align="center"
-              style={{ color: "tan" }}
-            >
-              I graduate from Hyundai highschool. And I enter into the Soongsil
-              Univ. I major in School of Electronic Engineering.
-            </Typography>
-          </Box>
-          {/* Year 2020*/}
-          <Typography
-            variant="h2"
-            className={`${classes.timeLineYear} ${classes.timeLineItem}`}
-          >
-            2020
-          </Typography>
-          <Box component="div" className={classes.timeLineItem}>
-            <Typography
-              variant="h5"
-              align="center"
-              className={classes.subHeading}
-            >
-              Web Development
-            </Typography>
-            <Typography
-              variant="body1"
-              align="center"
-              style={{ color: "tomato" }}
-            >
-              NodeJS | React
-            </Typography>
-            <Typography
-              variant="subtitle1"
-              align="center"
-              style={{ color: "tan" }}
-            >
-              I graduate from Hyundai highschool. And I enter into the Soongsil
-              Univ. I major in School of Electronic Engineering.
-            </Typography>
-          </Box>
+          {resumeData.map((data, index) => (
+            <>
+              <Typography
+                variant="h2"
+                className={`${classes.timeLineYear} ${classes.timeLineItem}`}
+              >
+                {data.year}
+              </Typography>
+              <Box component="div" className={classes.timeLineItem}>
+                <Typography
+                  variant="h5"
+                  align="center"
+                  className={classes.subHeading}
+                >
+                  {data.title}
+                </Typography>
+                <Typography
+                  variant="body1"
+                  align="center"
+                  style={{ color: "tomato" }}
+                >
+                  {data.subtitle}
+                </Typography>
+                <Typography
+                  variant="subtitle1"
+                  align="center"
+                  style={{ color: "tan" }}
+                >
+                  {data.description}
+                </Typography>
+              </Box>
+            </>
+          ))}
         </Box>
       </Box>
     </>
