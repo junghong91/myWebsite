@@ -77,7 +77,9 @@ const Comments = () => {
 
     axios
       .post("/comments/add", comment)
-      .then((res) => setMessage(res.data))
+      .then((res) => {
+        setMessage(res.data);
+      })
       .catch((err) => console.log(`Error: ${err}`));
   };
 
@@ -139,8 +141,17 @@ const Comments = () => {
             fullWidth={true}
             endIcon={<SendIcon />}
           >
-            Add Comment
+            Add
           </Button>
+          <Typography
+            variant="h6"
+            style={{
+              color: "red",
+              textAlign: "center",
+            }}
+          >
+            {message ? message : ""}
+          </Typography>
         </form>
       </Grid>
       <Box className={classes.comments}>

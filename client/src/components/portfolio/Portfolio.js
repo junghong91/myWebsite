@@ -10,23 +10,9 @@ import {
   Typography,
   Container,
 } from "@material-ui/core";
-import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
 import projects from "../Data/projectData";
 import ImageSlider from "./ImageSlider";
-
-const Copyright = () => {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-};
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -69,7 +55,10 @@ const Album = () => {
       <Navbar />
       <main>
         {/* Hero unit */}
-        <div className={classes.heroContent}>
+        <div
+          className={classes.heroContent}
+          style={{ backgroundColor: "#344" }}
+        >
           <Container maxWidth="sm">
             <Typography
               component="h1"
@@ -129,10 +118,10 @@ const Album = () => {
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {projects.map((project) => (
-              <Grid item key={project} xs={12} sm={6} md={4}>
+            {projects.map((project, index) => (
+              <Grid item key={index} xs={12} sm={6} md={4}>
                 <Card className={classes.project}>
-                  <ImageSlider />
+                  <ImageSlider image={project.images} />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
                       {project.title}

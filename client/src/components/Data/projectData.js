@@ -18,14 +18,40 @@ const projects = [
       "AWS",
       "MongoDB",
     ],
-    images: [project1],
+    images: [
+      {
+        label: "Javascipt, HTML, CSS",
+        imgPath: project1,
+      },
+      {
+        label: "NodeJS, Express",
+        imgPath: project2,
+      },
+      {
+        label: "MongoDB",
+        imgPath: project3,
+      },
+    ],
   },
   {
     title: "CatchMind",
     description: "CatchMind cloning using JS and NodeJS",
     github: "https://github.com/junghong91",
     skills: ["Javascript", "CSS", "HTML", "NodeJS", "SocketIO", "MongoDB"],
-    images: [project2],
+    images: [
+      {
+        label: "Javascipt, HTML, CSS",
+        imgPath: project1,
+      },
+      {
+        label: "NodeJS, Express",
+        imgPath: project2,
+      },
+      {
+        label: "MongoDB",
+        imgPath: project3,
+      },
+    ],
   },
   {
     title: "Wetube",
@@ -41,14 +67,44 @@ const projects = [
       "AWS",
       "MongoDB",
     ],
-    images: [project3],
+    images: [
+      {
+        label: "Javascipt, HTML, CSS",
+        imgPath: project1,
+      },
+      {
+        label: "NodeJS, Express",
+        imgPath: project2,
+      },
+      {
+        label: "MongoDB",
+        imgPath: project3,
+      },
+    ],
   },
   {
     title: "CatchMind",
     description: "CatchMind cloning using JS and NodeJS",
     github: "https://github.com/junghong91",
     skills: ["Javascript", "CSS", "HTML", "NodeJS", "SocketIO", "MongoDB"],
-    images: [project4],
+    images: [
+      {
+        label: "Javascipt, HTML, CSS",
+        imgPath: project1,
+      },
+      {
+        label: "NodeJS, Express",
+        imgPath: project2,
+      },
+      {
+        label: "MongoDB",
+        imgPath: project3,
+      },
+      {
+        label: "GraphQL",
+        imgPath: project4,
+      },
+    ],
   },
 ];
 
