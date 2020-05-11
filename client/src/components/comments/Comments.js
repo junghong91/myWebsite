@@ -96,7 +96,7 @@ const Comments = () => {
               textTransform: "uppercase",
             }}
           >
-            How Do You Think of My Portfolio?
+            What Do You Think of My Portfolio?
           </Typography>
 
           <InputField
