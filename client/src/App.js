@@ -4,7 +4,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import "./App.css";
 import Home from "./components/index";
 import Resume from "./components/Resume";
-import Portfolio from "./components/Portfolio";
+import Portfolio from "./components/portfolio/Portfolio";
 import Contacts from "./components/Contacts";
 import Comments from "./components/comments/Comments";
 import EditArticle from "./components/comments/EditArticle";
