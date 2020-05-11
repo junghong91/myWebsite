@@ -61,7 +61,7 @@ const Contacts = () => {
         setUsername(res.data.username);
       })
       .catch((err) => console.log(`Error: ${err}`));
-  }, [useremail, username]);
+  }, [useremail, username, token]);
 
   return (
     <>

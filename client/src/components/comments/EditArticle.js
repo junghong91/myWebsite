@@ -82,7 +82,7 @@ const EditArticle = (props) => {
         setAuthorname(res.data.authorname);
       })
       .catch((err) => console.log(`Error: ${err}`));
-  }, []);
+  }, [props]);
 
   return (
     <Box component="div" style={{ background: "#233", height: "100%" }}>

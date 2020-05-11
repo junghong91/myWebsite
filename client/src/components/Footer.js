@@ -4,7 +4,6 @@ import { BottomNavigation, BottomNavigationAction } from "@material-ui/core";
 import Facebook from "@material-ui/icons/Facebook";
 import Instagram from "@material-ui/icons/Instagram";
 import GitHub from "@material-ui/icons/GitHub";
-import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {

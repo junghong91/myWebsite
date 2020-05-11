@@ -90,7 +90,7 @@ const Navbar = () => {
 
   useEffect(() => {
     setToken(Cookies.get("token"));
-  });
+  }, []);
 
   const toggleSlider = (slider, open) => () => {
     setState({ ...state, [slider]: open });
