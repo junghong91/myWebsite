@@ -9,22 +9,30 @@ import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 400,
+    height: "100%",
+    maxWidth: "100%",
     flexGrow: 1,
+    backgroundColor: "black",
   },
   header: {
     display: "flex",
     alignItems: "center",
-    height: 50,
+    height: "15% !important",
     paddingLeft: theme.spacing(4),
-    backgroundColor: theme.palette.background.default,
+    backgroundColor: "transparent",
   },
   img: {
-    height: 255,
-    maxWidth: 400,
+    height: "70%",
+    maxWidth: "100%",
     overflow: "hidden",
     display: "block",
     width: "100%",
+    boxSizing: "borderBox",
+  },
+  stepper: {
+    backgroundColor: "red",
+    color: "tan",
+    height: "15% !important",
   },
 }));
 
@@ -46,7 +54,9 @@ const TextMobileStepper = (props) => {
   return (
     <div className={classes.root}>
       <Paper square elevation={0} className={classes.header}>
-        <Typography>{image[activeStep].label}</Typography>
+        <Typography style={{ color: "tomato" }}>
+          {image[activeStep].label}
+        </Typography>
       </Paper>
       <img
         className={classes.img}
@@ -54,12 +64,14 @@ const TextMobileStepper = (props) => {
         alt={image[activeStep].label}
       />
       <MobileStepper
+        className={classes.stepper}
         steps={maxSteps}
         position="static"
         variant="text"
         activeStep={activeStep}
         nextButton={
           <Button
+            style={{ color: "tan" }}
             size="small"
             onClick={handleNext}
             disabled={activeStep === maxSteps - 1}
@@ -73,7 +85,12 @@ const TextMobileStepper = (props) => {
           </Button>
         }
         backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+          <Button
+            size="small"
+            onClick={handleBack}
+            disabled={activeStep === 0}
+            style={{ color: "tan" }}
+          >
             {theme.direction === "rtl" ? (
               <KeyboardArrowRight />
             ) : (
