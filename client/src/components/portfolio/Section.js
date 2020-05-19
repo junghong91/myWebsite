@@ -1,5 +1,5 @@
 import React from "react";
-import { TextField, Typography, Button, Grid, Box } from "@material-ui/core";
+import { Typography, Box } from "@material-ui/core";
 import projectData from "../Data/projectData";
 import Slider from "./component/Slider";
 
@@ -8,9 +8,9 @@ const Section = () => {
     <ul>
       {projectData.map((data) => (
         <Box
+          key={data.id}
           id={data.id}
           style={{
-            marginLeft: "250px",
             width: "100%",
             height: "100vh",
             borderBottom: "1px solid black",
@@ -18,7 +18,7 @@ const Section = () => {
         >
           <Typography>{data.title}</Typography>
           <Typography>{data.description}</Typography>
-          <Slider />
+          <Slider slides={data.images} />
         </Box>
       ))}
     </ul>

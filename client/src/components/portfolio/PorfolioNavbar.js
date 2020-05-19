@@ -39,12 +39,12 @@ const PorfolioNavbar = () => {
             <TreeItem nodeId="1113" label="C++"></TreeItem>
           </TreeItem>
           <TreeItem nodeId="112" label="Framework">
-            <TreeItem nodeId="1121" label={<Link>NodeJS</Link>}></TreeItem>
-            <TreeItem nodeId="1122" label={<Link>Express</Link>}></TreeItem>
-            <TreeItem nodeId="1123" label={<Link>React</Link>}></TreeItem>
-            <TreeItem nodeId="1124" label={<Link>BootStrap</Link>}></TreeItem>
-            <TreeItem nodeId="1125" label={<Link>Material UI</Link>}></TreeItem>
-            <TreeItem nodeId="1126" label={<Link>NPM</Link>}></TreeItem>
+            <TreeItem nodeId="1121" label={<div>NodeJS</div>}></TreeItem>
+            <TreeItem nodeId="1122" label={<div>Express</div>}></TreeItem>
+            <TreeItem nodeId="1123" label={<div>React</div>}></TreeItem>
+            <TreeItem nodeId="1124" label={<div>BootStrap</div>}></TreeItem>
+            <TreeItem nodeId="1125" label={<div>Material UI</div>}></TreeItem>
+            <TreeItem nodeId="1126" label={<div>NPM</div>}></TreeItem>
           </TreeItem>
           <TreeItem nodeId="113" label="DataBase">
             <TreeItem nodeId="1131" label="MongoDB"></TreeItem>
@@ -58,7 +58,7 @@ const PorfolioNavbar = () => {
             nodeId="121"
             label={
               <Link
-                activeClass="active"
+                activeClass="active1"
                 to="wetube"
                 spy={true}
                 smooth={true}
@@ -73,7 +73,7 @@ const PorfolioNavbar = () => {
             nodeId="122"
             label={
               <Link
-                activeClass="active"
+                activeClass="active2"
                 to="guessmind"
                 spy={true}
                 smooth={true}
@@ -88,7 +88,7 @@ const PorfolioNavbar = () => {
             nodeId="123"
             label={
               <Link
-                activeClass="active"
+                activeClass="active3"
                 to="mernblog"
                 spy={true}
                 smooth={true}
@@ -103,8 +103,8 @@ const PorfolioNavbar = () => {
             nodeId="124"
             label={
               <Link
-                activeClass="active"
-                to="main"
+                to="wetube"
+                activeClass="active4"
                 spy={true}
                 smooth={true}
                 offset={0}
@@ -118,8 +118,8 @@ const PorfolioNavbar = () => {
             nodeId="125"
             label={
               <Link
-                activeClass="active"
-                to="main"
+                to="wetube"
+                activeClass="active5"
                 spy={true}
                 smooth={true}
                 offset={0}
@@ -133,8 +133,8 @@ const PorfolioNavbar = () => {
             nodeId="126"
             label={
               <Link
-                activeClass="active"
-                to="main"
+                to="wetube"
+                activeClass="active6"
                 spy={true}
                 smooth={true}
                 offset={0}
@@ -148,8 +148,8 @@ const PorfolioNavbar = () => {
             nodeId="127"
             label={
               <Link
-                activeClass="active"
-                to="main"
+                to="wetube"
+                activeClass="active7"
                 spy={true}
                 smooth={true}
                 offset={0}

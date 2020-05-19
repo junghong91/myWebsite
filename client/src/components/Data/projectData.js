@@ -1,7 +1,6 @@
 import project1 from "../../images/js.jpg";
 import project2 from "../../images/nodejs.jpg";
 import project3 from "../../images/react.jpg";
-import project4 from "../../images/reactapollo.jpg";
 import WetubeMain from "../../images/WetubeMain.jpg";
 import WetubeHome from "../../images/WetubeHome.jpg.png";
 import GuessMindImage from "../../images/GuessMindSkills.jpg";

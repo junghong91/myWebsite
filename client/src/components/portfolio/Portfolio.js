@@ -9,10 +9,11 @@ const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: "#344",
     height: "100%",
+    width: "100%",
   },
 }));
 
-const Album = () => {
+const Portfolio = () => {
   const classes = useStyles();
 
   return (
@@ -21,10 +22,10 @@ const Album = () => {
       <Navbar />
       <main className={classes.root}>
         <Grid container>
-          <Grid item>
+          <Grid item xs={2}>
             <PorfolioNavbar />
           </Grid>
-          <Grid item>
+          <Grid item xs={10}>
             <Section />
           </Grid>
         </Grid>
@@ -33,4 +34,4 @@ const Album = () => {
   );
 };
 
-export default Album;
+export default Portfolio;
