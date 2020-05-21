@@ -26,16 +26,7 @@ const projects = [
       "AWS S3",
       "Heroku",
     ],
-    images: [
-      {
-        label: "HongTube(Youtube Cloning Project)",
-        imgPath: WetubeMain,
-      },
-      {
-        label: "Home Main Page",
-        imgPath: WetubeHome,
-      },
-    ],
+    images: [WetubeMain, WetubeHome],
   },
   {
     id: "guessmind",
@@ -43,12 +34,7 @@ const projects = [
     description: "CatchMind cloning using JS and NodeJS",
     github: "https://github.com/junghong91",
     skills: ["ES6", "CSS", "HTML", "NodeJS", "SocketIO", "Gulp", "Canvas"],
-    images: [
-      {
-        label: "GuessMind Cloning Project",
-        imgPath: GuessMindImage,
-      },
-    ],
+    images: [GuessMindImage],
   },
   {
     id: "mernblog",
@@ -64,20 +50,7 @@ const projects = [
       "Express",
       "MongoDB",
     ],
-    images: [
-      {
-        label: "Javascipt, HTML, CSS",
-        imgPath: project1,
-      },
-      {
-        label: "NodeJS, Express",
-        imgPath: project2,
-      },
-      {
-        label: "MongoDB",
-        imgPath: project3,
-      },
-    ],
+    images: [project1, project2, project3],
   },
 ];
 

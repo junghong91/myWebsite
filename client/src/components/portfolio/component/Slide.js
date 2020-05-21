@@ -1,25 +1,17 @@
 import React from "react";
-import { Box } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles({
-  SlideCSS: {
-    height: "80%",
-    width: "80%",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center",
-  },
-});
+import styled from "styled-components";
 
 const Slide = (props) => {
-  const classes = useStyles();
-  return (
-    <Box
-      className={classes.SlideCSS}
-      style={{ backgroundImage: `url(${props.imagePath})` }}
-    ></Box>
-  );
+  return <Main imgPath={props.imgPath}></Main>;
 };
+
+const Main = styled.div`
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(${(props) => props.imgPath});
+`;
 
 export default Slide;
