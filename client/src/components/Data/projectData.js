@@ -8,7 +8,7 @@ import GuessMindImage from "../../images/GuessMindSkills.jpg";
 const projects = [
   {
     id: "wetube",
-    title: "Wetube",
+    title: "WeTube",
     description: "Youtube Cloning Project",
     github: "https://github.com/junghong91/wetube",
     page: "https://dry-plains-77031.herokuapp.com/",

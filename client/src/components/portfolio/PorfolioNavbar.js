@@ -8,13 +8,15 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 
 const useStyles = makeStyles({
   root: {
+    marginLeft: "1rem",
+    marginTop: "1rem",
     position: "fixed",
     height: 240,
     width: "20%",
     flexGrow: 1,
     maxWidth: 250,
     color: "tan",
-    opacity: 0.4,
+    opacity: 0.7,
   },
 });
 
@@ -26,7 +28,7 @@ const PorfolioNavbar = () => {
       className={classes.root}
       defaultCollapseIcon={<ExpandMoreIcon />}
       defaultExpandIcon={<ChevronRightIcon />}
-      defaultExpanded={["1", "11", "12"]}
+      defaultExpanded={["1", "11", "12", "111", "112", "113"]}
     >
       <TreeItem
         nodeId="1"
@@ -63,7 +65,7 @@ const PorfolioNavbar = () => {
                 spy={true}
                 smooth={true}
                 offset={0}
-                duration={500}
+                duration={600}
               >
                 Wetube
               </Link>
@@ -78,7 +80,7 @@ const PorfolioNavbar = () => {
                 spy={true}
                 smooth={true}
                 offset={0}
-                duration={500}
+                duration={600}
               >
                 GuessMind
               </Link>
@@ -93,7 +95,7 @@ const PorfolioNavbar = () => {
                 spy={true}
                 smooth={true}
                 offset={0}
-                duration={500}
+                duration={600}
               >
                 Blog App MERN Stack
               </Link>
@@ -108,7 +110,7 @@ const PorfolioNavbar = () => {
                 spy={true}
                 smooth={true}
                 offset={0}
-                duration={500}
+                duration={600}
               >
                 ImageUploader
               </Link>
@@ -123,7 +125,7 @@ const PorfolioNavbar = () => {
                 spy={true}
                 smooth={true}
                 offset={0}
-                duration={500}
+                duration={600}
               >
                 MovieApp
               </Link>
@@ -138,7 +140,7 @@ const PorfolioNavbar = () => {
                 spy={true}
                 smooth={true}
                 offset={0}
-                duration={500}
+                duration={600}
               >
                 CSS Master
               </Link>
@@ -153,7 +155,7 @@ const PorfolioNavbar = () => {
                 spy={true}
                 smooth={true}
                 offset={0}
-                duration={500}
+                duration={600}
               >
                 MyHooks
               </Link>

@@ -11,6 +11,7 @@ const Main = styled.div`
   margin: 0 auto;
   overflow: hidden;
   background-color: #455;
+  border-radius: 5px;
 `;
 
 const Slider = (props) => {
