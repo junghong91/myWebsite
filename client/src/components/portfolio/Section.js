@@ -25,7 +25,7 @@ const useStyles = makeStyles({
   buttonBox: {
     display: "grid",
     gridTemplateColumns: "repeat(2, 70px)",
-    gap: "4rem",
+    gap: "3.8rem",
     justifyContent: "center",
     alignItems: "center",
     marginTop: "0.7rem",
@@ -77,6 +77,7 @@ const Section = () => {
             borderTop: "15px solid #344",
             borderBottom: "15px solid #344",
             borderRight: "30px solid #344",
+            borderLeft: "20px solid #344",
           }}
         >
           <Typography className={classes.title} variant="h3" align="center">
