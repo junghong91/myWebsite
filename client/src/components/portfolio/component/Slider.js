@@ -11,7 +11,8 @@ const Main = styled.div`
   margin: 0 auto;
   overflow: hidden;
   background-color: #455;
-  border-radius: 5px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 `;
 
 const Slider = (props) => {

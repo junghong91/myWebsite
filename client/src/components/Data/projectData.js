@@ -2,8 +2,14 @@ import project1 from "../../images/js.jpg";
 import project2 from "../../images/nodejs.jpg";
 import project3 from "../../images/react.jpg";
 import WetubeMain from "../../images/WetubeMain.jpg";
-import WetubeHome from "../../images/WetubeHome.jpg.png";
 import GuessMindImage from "../../images/GuessMindSkills.jpg";
+import Home from "../../images/Home.jpg";
+import Detail from "../../images/Detail.jpg";
+import Comment from "../../images/Comment.jpg";
+import LogIn from "../../images/LogIn.jpg";
+import SignIn from "../../images/SignIn.jpg";
+import Upload from "../../images/Upload.jpg";
+import UserDetail from "../../images/UserDetail.jpg";
 
 const projects = [
   {
@@ -24,15 +30,23 @@ const projects = [
       "MongoDB",
       "MongoDB Atlas",
       "AWS S3",
-      "Heroku",
     ],
-    images: [WetubeMain, WetubeHome],
+    images: [
+      WetubeMain,
+      Home,
+      Detail,
+      Comment,
+      LogIn,
+      SignIn,
+      Upload,
+      UserDetail,
+    ],
   },
   {
     id: "guessmind",
     title: "GuessMind",
     description: "CatchMind cloning using JS and NodeJS",
-    github: "https://github.com/junghong91",
+    github: "https://github.com/junghong91/guess-mine",
     skills: ["ES6", "CSS", "HTML", "NodeJS", "SocketIO", "Gulp", "Canvas"],
     images: [GuessMindImage],
   },
@@ -40,7 +54,7 @@ const projects = [
     id: "mernblog",
     title: "MERN Stack Blog App",
     description: "Blog App using MongoDB, Express, React and NodeJS",
-    github: "https://github.com/junghong91",
+    github: "https://github.com/junghong91/Blog-App-MERN-Stack",
     skills: [
       "Javascript",
       "CSS",

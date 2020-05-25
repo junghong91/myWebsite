@@ -8,11 +8,11 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 
 const useStyles = makeStyles({
   root: {
-    marginLeft: "1rem",
-    marginTop: "1rem",
     position: "fixed",
+    marginTop: "0.5rem",
+    marginLeft: "0.2rem",
     height: 240,
-    width: "20%",
+    width: "100%",
     flexGrow: 1,
     maxWidth: 250,
     color: "tan",

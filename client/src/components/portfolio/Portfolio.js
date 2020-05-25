@@ -7,7 +7,7 @@ import Section from "./Section";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: "#344",
+    backgroundColor: "#455",
     height: "100%",
     width: "100%",
   },

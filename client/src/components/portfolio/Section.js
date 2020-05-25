@@ -7,7 +7,7 @@ import { GitHub, ImportContacts } from "@material-ui/icons";
 
 const useStyles = makeStyles({
   root: {
-    backgroundColor: "#133",
+    backgroundColor: "#344",
     padding: 0,
   },
 
@@ -24,22 +24,22 @@ const useStyles = makeStyles({
 
   buttonBox: {
     display: "grid",
-    gridTemplateColumns: "repeat(2, 70px)",
-    gap: "3.8rem",
+    gridTemplateColumns: "repeat(2, auto)",
+    gap: "1rem",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: "0.7rem",
+    marginTop: "1rem",
   },
 
   button: {
     // background: "linear-gradient(45deg, #233 30%, #455 90%)",
-    background: "#122",
+    background: "transparent",
     height: 35,
     padding: "0 1rem",
     width: "8rem",
-    color: "tan",
+    color: "darkgray",
     "&:hover": {
-      color: "tomato",
+      color: "darkcyan",
       backgroundColor: "#455",
     },
   },
@@ -54,10 +54,16 @@ const useStyles = makeStyles({
     flexDirection: "row",
   },
   chip: {
+    fontSize: "1rem",
     marginRight: "0.5rem",
     marginBottom: "0.5rem",
-    color: "tomato",
-    border: "1px solid tomato",
+    color: "tan",
+    border: "1px solid tan",
+    "&:hover": {
+      // color: "darkgray",
+      // border: "1px solid darkgray",
+      opacity: 0.5,
+    },
   },
 });
 
@@ -74,10 +80,6 @@ const Section = () => {
             width: "100%",
             height: "100vh",
             paddingTop: "3rem",
-            borderTop: "15px solid #344",
-            borderBottom: "15px solid #344",
-            borderRight: "30px solid #344",
-            borderLeft: "20px solid #344",
           }}
         >
           <Typography className={classes.title} variant="h3" align="center">
@@ -93,7 +95,6 @@ const Section = () => {
           <Slider slides={data.images} />
           <Box align="center" className={classes.buttonBox}>
             <Button
-              variant="outlined"
               className={classes.button}
               href={data.github}
               target="_blank"
@@ -116,10 +117,8 @@ const Section = () => {
                 <Chip
                   variant="outlined"
                   className={classes.chip}
-                  size="small"
                   label={"# " + skill}
                   clickable
-                  size="md"
                 />
               );
             })}
